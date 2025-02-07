@@ -31,6 +31,7 @@ This project is a Health Management System (HMS) built using React for the front
 ### Frontend
 
 ## Project Structure
+```sh
 .gitignore 
 eslint.config.js
 index.html
@@ -45,14 +46,14 @@ src/
     index.css 
     main.jsx 
 vite.config.js
-
+```
 
 #### BACKEND
 
 ## For this walkthrough, we'll assume you're using Node.js with Express.
 
 *** A typical Node.js backend project structure might look like this:
-
+```sh
 backend/
 ├── src/
 │   ├── controllers/        # Contains logic for handling routes
@@ -71,7 +72,7 @@ backend/
 │   ├── server.js           # Entry point for the server
 ├── package.json            # Node.js dependencies and scripts
 ├── .env                    # Environment variables
-
+```
 ## Getting Started
 
 ### Prerequisites
@@ -87,46 +88,59 @@ backend/
 1. Clone the repository:
 
 ```sh
-git clone [repo url]
-cd hms-app
+git clone https://github.com/Rashid-dewewe/hms-with-blockchain.git
+cd hms-with-blockchain
 ```
 
 2. install Dependencies
+```sh
 npm install
+```
 # or
+```sh
 yarn install
-
+```
 ### Running the Application
 To start the development server:
-
+```sh
 npm run dev
+```
 # or
+```sh
 yarn dev
-
+```
 
 The application will be available at http://localhost:3000
 
 ### Building for Production
 To build the application for production:
-
+```sh
 npm run build
+```
 # or
+```sh
 yarn build
-
+```
 The production-ready files will be in the dist directory.
 
 ### Linting
 To lint the codebase:
+```sh
 npm run lint
+```
 # or
+```sh
 yarn lint
-
+```
 ### Previewing the Production Build
 To preview the production build:
+```sh
 npm run preview
+```
 # or
+```sh
 yarn preview
-
+```
 ### Technologies Used
 
 - **React**: For building the user interface.
@@ -151,52 +165,35 @@ The project uses ethers and web3 libraries to interact with the blockchain. Ensu
 1. Set Up the Backend
 a. Choose a Backend Framework
 Node.js with Express: A popular choice for building RESTful APIs.
-Django: A high-level Python web framework.
-Flask: A lightweight Python web framework.
 
 b. Initialize the Project
 Create a new directory for your backend.
-==> Initialize a new Node.js project:
-
-     npm init -y 
-
-==> Install necessary dependencies:
-
-npm install express body-parser mongoose cors 
-
-
-c. Set Up Express Server
-Create an index.js file and set up a basic Express server:
-
-index.js (example below)
-
+Initialize a new Node.js project:
 ```sh
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-
-const app = express();
-app.use(bodyParser.json());
-app.use(cors());
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+     npm init -y 
+```
+Install necessary dependencies:
+```sh
+npm install express body-parser mongoose cors 
 ```
 
-2. Set Up MongoDB for Data Storage
+c. Set Up MongoDB for Data Storage
 MongoDB Atlas: A cloud-based MongoDB service.
 Local MongoDB: Install MongoDB locally.
-a. Connect to MongoDB
+i. Connect to MongoDB
 Install Mongoose:
 
 ```sh
+cd backend
 npm install mongoose
+```
+d. Set Up Express Server
+start up the server
+
+```sh
+cd backend
+cd src
+node server.js
 ```
 
 4. Integrate Blockchain
@@ -209,11 +206,11 @@ Hyperledger Fabric: A permissioned blockchain framework.
 For this walkthrough, we'll assume you're using Ethereum.
 
 b. Set Up Web3.js
-==> Install Web3.js:
+Install Web3.js:
 ```sh
  npm install web3 
 ```
-d. Compile and deploy Smart Contracts
+c. Compile and deploy Smart Contracts
 Write smart contracts in Solidity for managing patient records and interactions.
 Compile and deploy the smart contracts using tools like Truffle or Hardhat.
 ```sh
