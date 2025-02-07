@@ -1,0 +1,34 @@
+Key Features of the System
+User Roles:
+
+Doctor: Can view and manage patient records and appointments.
+
+Patient: Can view their own records and manage appointments.
+
+Blockchain Integration:
+
+Use blockchain to securely store and manage health records and transactions.
+
+Each user (doctor or patient) will have a unique blockchain address or identity.
+
+Authentication:
+
+Users register with their email, password, and role (Doctor or Patient).
+
+During login, the system validates their credentials and assigns the appropriate role.
+
+Role-Based Access Control:
+
+Doctors and patients have access to different features based on their roles.
+
+#### BACKEND AND BLOCKCHAIN Integration
+Sure, here's a high-level walkthrough of the steps you need to take to integrate the backend and blockchain into your Health Management System (HMS) project:
+
+1. Set Up the Backend
+a. Choose a Backend Framework
+Node.js with Express: A popular choice for building RESTful APIs.
+Django: A high-level Python web framework.
+Flask: A lightweight Python web framework.
+
+-- truffle compile
+-- truffle migrate --network development
