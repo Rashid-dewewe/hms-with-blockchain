@@ -1,3 +1,4 @@
+//src/components/Doctor.jsx
 import React, { useEffect, useState } from 'react';
 import { useAuth } from './AuthContext';
 

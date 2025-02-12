@@ -34,10 +34,13 @@ const Patient = () => {
     return <div className='fw-bold text-danger text-center my-5'>Error: {error}</div>;
   }
 
+// Uncomment this block to display a message when no records are found
+
+
   // if (records.length === 0) {
   //   return <div className='fw-bold text-warning text-center my-5'>No records found for this patient</div>;
   // }
-
+  
   return (
     <div className="container mt-5">
       <h2>Patient Dashboard</h2>

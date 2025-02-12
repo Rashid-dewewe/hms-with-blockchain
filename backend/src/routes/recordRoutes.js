@@ -1,4 +1,5 @@
 // src/routes/recordRoutes.js
+
 const express = require('express');
 const { createRecord, getRecords } = require('../controllers/recordController');
 

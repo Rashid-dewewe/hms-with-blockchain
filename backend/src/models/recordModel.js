@@ -1,3 +1,4 @@
+//backend/src/models/recordModel.js
 const mongoose = require('mongoose');
 
 const recordSchema = new mongoose.Schema({

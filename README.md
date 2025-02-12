@@ -35,6 +35,7 @@ frontend/
 ├── public/ 
 ├── README.md 
 ├── src/ 
+<<<<<<< HEAD
 │   │   ├── App.css
 │   │   ├── App.jsx 
 │   │   ├── assets/ 
@@ -46,6 +47,19 @@ frontend/
 │   │   │    ├── ProtectedRoute.jsx
 │   │   ├── index.css 
 │   │   ├── main.jsx 
+=======
+│   ├── App.css
+│   ├── App.jsx 
+│   ├── assets/ 
+│   ├── components/ 
+│   │    ├── AtuhContext.jsx
+│   │    ├── Doctor.jsx
+│   │    ├── Patient.jsx
+│   │    ├── NavBar.jsx
+│   │    ├── ProtectedRoute.jsx
+│   ├── index.css 
+│   ├── main.jsx 
+>>>>>>> 376139c3339361c30460d0849e34bd766c7864e2
 ├── vite.config.js
 ```
 
@@ -191,12 +205,23 @@ npm install express body-parser mongoose cors
 
 c. Set Up Express Server
 Create an app.js file and set up a basic Express server:
+<<<<<<< HEAD
 
 2. Set Up MongoDB for Data Storage
+=======
+=======
+
+c. Set Up MongoDB for Data Storage
+>>>>>>> 376139c3339361c30460d0849e34bd766c7864e2
 MongoDB Atlas: A cloud-based MongoDB service.
 Local MongoDB: Install MongoDB locally.
 
 a. Connect to MongoDB
+<<<<<<< HEAD
+=======
+
+i. Connect to MongoDB
+>>>>>>> 376139c3339361c30460d0849e34bd766c7864e2
 Install Mongoose:
 
 ```sh
