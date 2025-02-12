@@ -19,7 +19,6 @@ This project is a Health Management System (HMS) built using React for the front
   - [File Descriptions](#file-descriptions)
   - [Blockchain Integration](#blockchain-integration)
 - [Contributing](#contributing)
-- [License](#license)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
@@ -75,6 +74,7 @@ backend/
 ├── package.json            # Node.js dependencies and scripts
 ├── .env                    # Environment variables
 ```
+
 ## Getting Started
 
 ### Prerequisites
@@ -91,13 +91,14 @@ backend/
 
 ```sh
 git clone https://github.com/Rashid-dewewe/hms-with-blockchain.git
-cd hms-app # navigate to cloned directory
+cd hms-with-blockchain # navigate to cloned directory
 ```
 
 2. install Dependencies
 ```sh
 npm install
 ```
+
 # or
 ```sh
 yarn install
@@ -107,6 +108,7 @@ To start the development server:
 ```sh
 npm run dev
 ```
+
 # or
 ```sh
 yarn dev
@@ -119,8 +121,10 @@ To build the application for production:
 ```sh
 npm run build
 ```
+
 # or
 ```sh
+
 yarn build
 ```
 The production-ready files will be in the dist directory.
@@ -134,8 +138,10 @@ npm run lint
 ```sh
 yarn lint
 ```
+
 ### Previewing the Production Build
 To preview the production build:
+
 ```sh
 npm run preview
 ```
@@ -143,6 +149,7 @@ npm run preview
 ```sh
 yarn preview
 ```
+
 ### Technologies Used
 
 - **React**: For building the user interface.
@@ -167,11 +174,11 @@ The project uses ethers and web3 libraries to interact with the blockchain. Ensu
 1. Set Up the Backend
 a. Choose a Backend Framework
 Node.js with Express: A popular choice for building RESTful APIs.
-Django: A high-level Python web framework.
-Flask: A lightweight Python web framework.
 
 b. Initialize the Project
 Create a new directory for your backend.
+Initialize a new Node.js project:
+```sh
 Initialize a new Node.js project:
 ```sh
      npm init -y 
@@ -193,7 +200,16 @@ a. Connect to MongoDB
 Install Mongoose:
 
 ```sh
+cd backend
 npm install mongoose
+```
+d. Set Up Express Server
+start up the server
+
+```sh
+cd backend
+cd src
+node server.js
 ```
 
 4. Integrate Blockchain
@@ -210,7 +226,7 @@ Install Web3.js:
 ```sh
  npm install web3 
 ```
-d. Compile and deploy Smart Contracts
+c. Compile and deploy Smart Contracts
 Write smart contracts in Solidity for managing patient records and interactions.
 Compile and deploy the smart contracts using tools like Truffle or Hardhat.
 ```sh
@@ -238,10 +254,6 @@ Each step can be expanded with more detailed instructions and code examples as n
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-### License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 ### Acknowledgements
 
 - [Vite](https://vitejs.dev/)
@@ -251,3 +263,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 For any questions or inquiries, please contact [shantiabdulrashid@gmail.com].
+
