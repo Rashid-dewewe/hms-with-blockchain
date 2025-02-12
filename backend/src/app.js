@@ -5,6 +5,7 @@ const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const dotenv = require('dotenv');
 const recordRoutes = require('./routes/recordRoutes');
+const appointmentRoutes = require('./routes/appointmentRoutes'); // Import appointment routes
 const dbConfig = require('./config/db');
 
 dotenv.config(); // Load environment variables
@@ -25,6 +26,7 @@ app.use(cors({ origin: 'http://localhost:5173' }));
 mongoose
   .connect(dbConfig.url, {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Failed to connect to MongoDB:', err));
@@ -32,5 +34,6 @@ mongoose
 // Routes
 app.use('/api', authRoutes);
 app.use('/api', recordRoutes);
+app.use('/api', appointmentRoutes); // Use appointment routes
 
 module.exports = app;

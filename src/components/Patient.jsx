@@ -3,9 +3,11 @@ import { useAuth } from './AuthContext';
 
 const Patient = () => {
   const { user } = useAuth();
-  const [records, setRecords] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState('');
+  const [records, setRecords] = useState([]);
+  const [appointments, setAppointments] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
   useEffect(() => {
     const fetchRecords = async () => {
       try {
@@ -23,8 +25,51 @@ const Patient = () => {
       }
     };
 
+    const fetchAppointments = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/appointments/patient/${user.id}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch appointments');
+        }
+        const data = await response.json();
+        setAppointments(data.appointments || []);
+      } catch (error) {
+        console.error('Failed to fetch appointments:', error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchRecords();
+    fetchAppointments();
   }, [user.id]);
+
+  const handleMakeAppointment = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/api/appointments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          doctorId: 'doctor-id-placeholder', // Replace with actual doctor ID
+          patientId: user.id,
+          date: new Date().toISOString(), // Replace with actual date
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to make appointment');
+      }
+
+      const data = await response.json();
+      setAppointments([...appointments, data.appointment]);
+    } catch (error) {
+      console.error('Failed to make appointment:', error);
+      setError(error.message);
+    }
+  };
 
   if (loading) {
     return <div className='fw-bold text-center text-primary my-5'>Loading...</div>;
@@ -34,13 +79,6 @@ const Patient = () => {
     return <div className='fw-bold text-danger text-center my-5'>Error: {error}</div>;
   }
 
-// Uncomment this block to display a message when no records are found
-
-
-  // if (records.length === 0) {
-  //   return <div className='fw-bold text-warning text-center my-5'>No records found for this patient</div>;
-  // }
-  
   return (
     <div className="container mt-5">
       <h2>Patient Dashboard</h2>
@@ -67,7 +105,16 @@ const Patient = () => {
             <div className="card-body">
               <h5 className="card-title">Appointments</h5>
               <p className="card-text">Manage your appointments with doctors.</p>
-              <button className="btn btn-primary">Make an Appointment</button>
+              <ul>
+                {appointments.map((appointment, index) => (
+                  <li key={index}>
+                    <strong>Doctor ID:</strong> {appointment.doctorId}<br />
+                    <strong>Date:</strong> {new Date(appointment.date).toLocaleString()}<br />
+                    <strong>Status:</strong> {appointment.status}
+                  </li>
+                ))}
+              </ul>
+              <button className="btn btn-primary" onClick={handleMakeAppointment}>Make an Appointment</button>
             </div>
           </div>
         </div>
