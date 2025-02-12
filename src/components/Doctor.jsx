@@ -4,21 +4,35 @@ import { useAuth } from './AuthContext';
 const Doctor = () => {
   const { user } = useAuth();
   const [patientRecords, setPatientRecords] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    // Fetch all patient records from the backend
     const fetchPatientRecords = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/records');
+        const response = await fetch(`http://localhost:5000/api/records/${user.id}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch records');
+        }
         const data = await response.json();
-        setPatientRecords(data.records);
+        setPatientRecords(data.records || []);
       } catch (error) {
         console.error('Failed to fetch patient records:', error);
+      } finally {
+        setLoading(false);
       }
     };
-
+  
     fetchPatientRecords();
-  }, []);
+  }, [user.id]);
+
+  if (loading) {
+    return <div className='text-primary text-center fw-bold my-5'>Loading...</div>;
+  }
+
+  if (error) {
+    return <div className='text-danger text-center fw-bold my-5'>Error: {error}</div>;
+  }
 
   return (
     <div className="container mt-5">

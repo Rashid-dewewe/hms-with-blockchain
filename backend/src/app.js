@@ -18,7 +18,8 @@ const app = express();
 app.use(express.json());
 
 // Use CORS middleware
-app.use(cors());
+// Allow requests from frontend running on port 5173
+app.use(cors({ origin: 'http://localhost:5173' }));
 
 // Connect to MongoDB
 mongoose

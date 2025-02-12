@@ -1,33 +1,43 @@
 // src/services/blockchainService.js
-const { Web3 } = require('web3'); // Correctly import Web3
+const { Web3 } = require('web3');
 const HealthRecordABI = require('../../../blockchain/build/contracts/HealthRecord.json').abi;
 
-// Connect to the blockchain network
-const web3 = new Web3('http://localhost:7545'); // Ganache URL
+// Connect to Ganache using IPv4
+const web3 = new Web3('http://127.0.0.1:7545');
 
 // Contract address (replace with your deployed contract address)
-const contractAddress = '0x7617dE0E8a3F5643789AbE192bCA8531149b35aC';
+const contractAddress = '0x913cEf1DFA0dcD19EDEac353A8fFBDCd9ff857F2';
 
 // Create a contract instance
 const healthRecordContract = new web3.eth.Contract(HealthRecordABI, contractAddress);
 
 // Add a new health record to the blockchain
 const addRecord = async (patientId, doctorId, data) => {
-  const accounts = await web3.eth.getAccounts();
-  const result = await healthRecordContract.methods
-    .addRecord(patientId, doctorId, data)
-    .send({ from: accounts[0], gas: 3000000 });
+  try {
+    const accounts = await web3.eth.getAccounts();
+    const result = await healthRecordContract.methods
+      .addRecord(patientId, doctorId, data)
+      .send({ from: accounts[0], gas: 3000000 });
 
-  return result;
+    return result;
+  } catch (error) {
+    console.error('Failed to add record to blockchain:', error);
+    throw new Error('Failed to connect to the blockchain network.');
+  }
 };
 
 // Get all records for a patient from the blockchain
 const getRecordsByPatient = async (patientId) => {
-  const result = await healthRecordContract.methods
-    .getRecordsByPatient(patientId)
-    .call();
+  try {
+    const result = await healthRecordContract.methods
+      .getRecordsByPatient(patientId)
+      .call();
 
-  return result;
+    return result;
+  } catch (error) {
+    console.error('Failed to fetch records from blockchain:', error);
+    throw new Error('Failed to connect to the blockchain network.');
+  }
 };
 
 module.exports = { addRecord, getRecordsByPatient };

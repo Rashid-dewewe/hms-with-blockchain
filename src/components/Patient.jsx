@@ -27,16 +27,16 @@ const Patient = () => {
   }, [user.id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='fw-bold text-center text-primary my-5'>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className='fw-bold text-danger text-center my-5'>Error: {error}</div>;
   }
 
-  if (records.length === 0) {
-    return <div>No records found</div>;
-  }
+  // if (records.length === 0) {
+  //   return <div className='fw-bold text-warning text-center my-5'>No records found for this patient</div>;
+  // }
 
   return (
     <div className="container mt-5">
@@ -49,7 +49,11 @@ const Patient = () => {
               <p className="card-text">View and manage your health records securely.</p>
               <ul>
                 {records.map((record, index) => (
-                  <li key={index}>{record.data}</li>
+                  <li key={index}>
+                    <strong>Doctor ID:</strong> {record.doctorId}<br />
+                    <strong>Data:</strong> {record.data}<br />
+                    <strong>Timestamp:</strong> {new Date(record.timestamp).toLocaleString()}
+                  </li>
                 ))}
               </ul>
             </div>
