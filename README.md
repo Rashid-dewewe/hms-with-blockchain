@@ -35,17 +35,17 @@ frontend/
 ├── public/ 
 ├── README.md 
 ├── src/ 
-│   │   ├── App.css
-│   │   ├── App.jsx 
-│   │   ├── assets/ 
-│   │   ├── components/ 
-│   │   │    ├── AtuhContext.jsx
-│   │   │    ├── Doctor.jsx
-│   │   │    ├── Patient.jsx
-│   │   │    ├── NavBar.jsx
-│   │   │    ├── ProtectedRoute.jsx
-│   │   ├── index.css 
-│   │   ├── main.jsx 
+│   ├── App.css
+│   ├── App.jsx 
+│   ├── assets/ 
+│   ├── components/ 
+│   │    ├── AtuhContext.jsx
+│   │    ├── Doctor.jsx
+│   │    ├── Patient.jsx
+│   │    ├── NavBar.jsx
+│   │    ├── ProtectedRoute.jsx
+│   ├── index.css 
+│   ├── main.jsx 
 ├── vite.config.js
 ```
 
