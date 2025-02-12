@@ -48,24 +48,6 @@ frontend/
 │   │   ├── index.css 
 │   │   ├── main.jsx 
 ├── vite.config.js
-=======
-## Project Structure
-```sh
-.gitignore 
-eslint.config.js
-index.html
-package.json
-public/ 
-README.md 
-src/ 
-    App.css
-    App.jsx 
-    assets/ 
-    components/ 
-    index.css 
-    main.jsx 
-vite.config.js
->>>>>>> cd2e37b624214ee2b73813528994ff56c6dae543
 ```
 
 #### BACKEND
@@ -109,11 +91,7 @@ backend/
 
 ```sh
 git clone https://github.com/Rashid-dewewe/hms-with-blockchain.git
-<<<<<<< HEAD
-cd hms-app # navigate to cloned directory
-=======
 cd hms-with-blockchain
->>>>>>> cd2e37b624214ee2b73813528994ff56c6dae543
 ```
 
 2. install Dependencies
@@ -196,30 +174,23 @@ Initialize a new Node.js project:
 ```sh
      npm init -y 
 ```
-<<<<<<< HEAD
 
-=======
->>>>>>> cd2e37b624214ee2b73813528994ff56c6dae543
 Install necessary dependencies:
 ```sh
 npm install express body-parser mongoose cors 
 ```
-<<<<<<< HEAD
 
 c. Set Up Express Server
 Create an app.js file and set up a basic Express server:
 =======
->>>>>>> cd2e37b624214ee2b73813528994ff56c6dae543
 
 c. Set Up MongoDB for Data Storage
 MongoDB Atlas: A cloud-based MongoDB service.
 Local MongoDB: Install MongoDB locally.
-<<<<<<< HEAD
 
 a. Connect to MongoDB
-=======
+
 i. Connect to MongoDB
->>>>>>> cd2e37b624214ee2b73813528994ff56c6dae543
 Install Mongoose:
 
 ```sh
