@@ -26,7 +26,6 @@ This project is a Health Management System (HMS) built using React for the front
 
 ### Frontend
 
-<<<<<<< HEAD
 ```sh
 frontend/
 ├── .gitignore 
