@@ -1,8 +1,5 @@
 # Health Management System (HMS) - Blockchain Project
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
-
 This project is a Health Management System (HMS) built using React for the frontend and Node.js for the backend, with blockchain integration for secure and decentralized data management. The project leverages `ethers` and `web3` libraries to interact with the blockchain.
 
 ## Table of Contents
@@ -22,7 +19,6 @@ This project is a Health Management System (HMS) built using React for the front
   - [File Descriptions](#file-descriptions)
   - [Blockchain Integration](#blockchain-integration)
 - [Contributing](#contributing)
-- [License](#license)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
@@ -30,6 +26,29 @@ This project is a Health Management System (HMS) built using React for the front
 
 ### Frontend
 
+<<<<<<< HEAD
+```sh
+frontend/
+├── .gitignore 
+├── eslint.config.js
+├── index.html
+├── package.json
+├── public/ 
+├── README.md 
+├── src/ 
+│   │   ├── App.css
+│   │   ├── App.jsx 
+│   │   ├── assets/ 
+│   │   ├── components/ 
+│   │   │    ├── AtuhContext.jsx
+│   │   │    ├── Doctor.jsx
+│   │   │    ├── Patient.jsx
+│   │   │    ├── NavBar.jsx
+│   │   │    ├── ProtectedRoute.jsx
+│   │   ├── index.css 
+│   │   ├── main.jsx 
+├── vite.config.js
+=======
 ## Project Structure
 ```sh
 .gitignore 
@@ -46,6 +65,7 @@ src/
     index.css 
     main.jsx 
 vite.config.js
+>>>>>>> cd2e37b624214ee2b73813528994ff56c6dae543
 ```
 
 #### BACKEND
@@ -89,7 +109,11 @@ backend/
 
 ```sh
 git clone https://github.com/Rashid-dewewe/hms-with-blockchain.git
+<<<<<<< HEAD
+cd hms-app # navigate to cloned directory
+=======
 cd hms-with-blockchain
+>>>>>>> cd2e37b624214ee2b73813528994ff56c6dae543
 ```
 
 2. install Dependencies
@@ -148,7 +172,7 @@ yarn preview
 - **Ethers.js**: For interacting with the Ethereum blockchain.
 - **Web3.js**: For additional blockchain interactions.
 - **React Router**: For client-side routing.
-- **Bootstrap**: For fast and better styling.
+- **Bootstrap**: For fast, better and easy styling.
 
 ### File Descriptions
 
@@ -172,15 +196,30 @@ Initialize a new Node.js project:
 ```sh
      npm init -y 
 ```
+<<<<<<< HEAD
+
+=======
+>>>>>>> cd2e37b624214ee2b73813528994ff56c6dae543
 Install necessary dependencies:
 ```sh
 npm install express body-parser mongoose cors 
 ```
+<<<<<<< HEAD
+
+c. Set Up Express Server
+Create an app.js file and set up a basic Express server:
+=======
+>>>>>>> cd2e37b624214ee2b73813528994ff56c6dae543
 
 c. Set Up MongoDB for Data Storage
 MongoDB Atlas: A cloud-based MongoDB service.
 Local MongoDB: Install MongoDB locally.
+<<<<<<< HEAD
+
+a. Connect to MongoDB
+=======
 i. Connect to MongoDB
+>>>>>>> cd2e37b624214ee2b73813528994ff56c6dae543
 Install Mongoose:
 
 ```sh
@@ -228,19 +267,15 @@ Use tools like Postman to test your API endpoints.
 Write unit tests for your backend logic.
 
 7. Deploy the Application
-Deploy your backend to a cloud service like Heroku, AWS, or Azure.
-Deploy your frontend to a static site hosting service like Netlify or Vercel.
+Deploy the backend to a cloud service like Heroku, AWS, or Azure.
+Deploy the frontend to a static site hosting service like Netlify or Vercel.
 
-This walkthrough provides a high-level overview of the steps involved in setting up the backend and integrating blockchain into your HMS project.
+This walkthrough provides a high-level overview of the steps involved in setting up the backend and integrating blockchain into HMS project.
 Each step can be expanded with more detailed instructions and code examples as needed.
 
 ### Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
-### License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 ### Acknowledgements
 
