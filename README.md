@@ -1,8 +1,5 @@
 # Health Management System (HMS) - Blockchain Project
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
-
 This project is a Health Management System (HMS) built using React for the frontend and Node.js for the backend, with blockchain integration for secure and decentralized data management. The project leverages `ethers` and `web3` libraries to interact with the blockchain.
 
 ## Table of Contents
@@ -30,29 +27,35 @@ This project is a Health Management System (HMS) built using React for the front
 
 ### Frontend
 
-## Project Structure
-.gitignore 
-eslint.config.js
-index.html
-package.json
-public/ 
-README.md 
-src/ 
-    App.css
-    App.jsx 
-    assets/ 
-    components/ 
-    index.css 
-    main.jsx 
-vite.config.js
-
+```sh
+frontend/
+├── .gitignore 
+├── eslint.config.js
+├── index.html
+├── package.json
+├── public/ 
+├── README.md 
+├── src/ 
+│   │   ├── App.css
+│   │   ├── App.jsx 
+│   │   ├── assets/ 
+│   │   ├── components/ 
+│   │   │    ├── AtuhContext.jsx
+│   │   │    ├── Doctor.jsx
+│   │   │    ├── Patient.jsx
+│   │   │    ├── NavBar.jsx
+│   │   │    ├── ProtectedRoute.jsx
+│   │   ├── index.css 
+│   │   ├── main.jsx 
+├── vite.config.js
+```
 
 #### BACKEND
 
 ## For this walkthrough, we'll assume you're using Node.js with Express.
 
 *** A typical Node.js backend project structure might look like this:
-
+```sh
 backend/
 ├── src/
 │   ├── controllers/        # Contains logic for handling routes
@@ -71,7 +74,7 @@ backend/
 │   ├── server.js           # Entry point for the server
 ├── package.json            # Node.js dependencies and scripts
 ├── .env                    # Environment variables
-
+```
 ## Getting Started
 
 ### Prerequisites
@@ -87,46 +90,59 @@ backend/
 1. Clone the repository:
 
 ```sh
-git clone [repo url]
-cd hms-app
+git clone https://github.com/Rashid-dewewe/hms-with-blockchain.git
+cd hms-app # navigate to cloned directory
 ```
 
 2. install Dependencies
+```sh
 npm install
+```
 # or
+```sh
 yarn install
-
+```
 ### Running the Application
 To start the development server:
-
+```sh
 npm run dev
+```
 # or
+```sh
 yarn dev
-
+```
 
 The application will be available at http://localhost:3000
 
 ### Building for Production
 To build the application for production:
-
+```sh
 npm run build
+```
 # or
+```sh
 yarn build
-
+```
 The production-ready files will be in the dist directory.
 
 ### Linting
 To lint the codebase:
+```sh
 npm run lint
+```
 # or
+```sh
 yarn lint
-
+```
 ### Previewing the Production Build
 To preview the production build:
+```sh
 npm run preview
+```
 # or
+```sh
 yarn preview
-
+```
 ### Technologies Used
 
 - **React**: For building the user interface.
@@ -134,7 +150,7 @@ yarn preview
 - **Ethers.js**: For interacting with the Ethereum blockchain.
 - **Web3.js**: For additional blockchain interactions.
 - **React Router**: For client-side routing.
-- **Bootstrap**: For fast and better styling.
+- **Bootstrap**: For fast, better and easy styling.
 
 ### File Descriptions
 
@@ -156,42 +172,23 @@ Flask: A lightweight Python web framework.
 
 b. Initialize the Project
 Create a new directory for your backend.
-==> Initialize a new Node.js project:
-
+Initialize a new Node.js project:
+```sh
      npm init -y 
+```
 
-==> Install necessary dependencies:
-
+Install necessary dependencies:
+```sh
 npm install express body-parser mongoose cors 
-
+```
 
 c. Set Up Express Server
-Create an index.js file and set up a basic Express server:
-
-index.js (example below)
-
-```sh
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-
-const app = express();
-app.use(bodyParser.json());
-app.use(cors());
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
-```
+Create an app.js file and set up a basic Express server:
 
 2. Set Up MongoDB for Data Storage
 MongoDB Atlas: A cloud-based MongoDB service.
 Local MongoDB: Install MongoDB locally.
+
 a. Connect to MongoDB
 Install Mongoose:
 
@@ -209,7 +206,7 @@ Hyperledger Fabric: A permissioned blockchain framework.
 For this walkthrough, we'll assume you're using Ethereum.
 
 b. Set Up Web3.js
-==> Install Web3.js:
+Install Web3.js:
 ```sh
  npm install web3 
 ```
@@ -231,10 +228,10 @@ Use tools like Postman to test your API endpoints.
 Write unit tests for your backend logic.
 
 7. Deploy the Application
-Deploy your backend to a cloud service like Heroku, AWS, or Azure.
-Deploy your frontend to a static site hosting service like Netlify or Vercel.
+Deploy the backend to a cloud service like Heroku, AWS, or Azure.
+Deploy the frontend to a static site hosting service like Netlify or Vercel.
 
-This walkthrough provides a high-level overview of the steps involved in setting up the backend and integrating blockchain into your HMS project.
+This walkthrough provides a high-level overview of the steps involved in setting up the backend and integrating blockchain into HMS project.
 Each step can be expanded with more detailed instructions and code examples as needed.
 
 ### Contributing
@@ -254,7 +251,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 For any questions or inquiries, please contact [shantiabdulrashid@gmail.com].
-
-
-
-account ==> 0x6A04A5015F75D3E908C4dE842E67370B55d1B832
