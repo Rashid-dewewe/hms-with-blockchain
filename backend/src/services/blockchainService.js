@@ -7,7 +7,7 @@ const HealthRecordABI = require('../../../blockchain/build/contracts/HealthRecor
 const web3 = new Web3('http://127.0.0.1:7545');
 
 // Contract address (replace with your deployed contract address)
-const contractAddress = '0x913cEf1DFA0dcD19EDEac353A8fFBDCd9ff857F2';
+const contractAddress = '0xE317c2AD2a1568aCf19446DDa43E18B0dE47A454';
 
 // Create a contract instance
 const healthRecordContract = new web3.eth.Contract(HealthRecordABI, contractAddress);

@@ -1,4 +1,3 @@
-//src/components/Doctor.jsx
 import React, { useEffect, useState } from 'react';
 import { useAuth } from './AuthContext';
 
@@ -56,40 +55,45 @@ const Doctor = () => {
 
   return (
     <div className="container mt-5">
-      <h2>Doctor Dashboard</h2>
+      {/* ... */}
       <div className="row">
         <div className="col-md-6">
+          <h3 className='btn btn-danger fw-bold'>Doctor Dashboard</h3>
+            <p>view Patient records</p>
           <div className="card mb-3">
-            <div className="card-body">
-              <h5 className="card-title">Patient Records</h5>
-              <p className="card-text">View and manage patient records securely.</p>
-              <ul>
-                {patientRecords.map((record, index) => (
-                  <li key={index}>
-                    <strong>Patient ID:</strong> {record.patientId}<br />
-                    <strong>Data:</strong> {record.data}<br />
-                    <strong>Timestamp:</strong> {new Date(record.timestamp).toLocaleString()}
+            {/* ... */}
+            <ul>
+              {patientRecords.map((record) => ( // No index needed here
+                <li key={record._id.toString()}> {/* Use record._id as the key & convert object into string if needed */}
+                  <strong>Patient ID:</strong> {record.patientId.toString()}<br />
+                  <strong>Data:</strong> {record.data}<br />
+                  <strong>Timestamp:</strong> {new Date(record.timestamp).toLocaleString()}
+                </li>
+              ))}
+            </ul>
+            <ul>
+                  <li>
+                    <strong>Patient ID:</strong> 67a4cca404605a9c0a390215<br />
+                    <strong>Data:</strong> Patient diagnosed with flu. Prescribed rest and medication.<br />
+                    <strong>Timestamp:</strong> {new Date('2023-10-02T14:20:10.123+00:00').toLocaleString()}
                   </li>
-                ))}
               </ul>
-            </div>
           </div>
         </div>
         <div className="col-md-6">
+        <h3 className='btn btn-success fw-bold'>Your Appointment</h3>
+        <p>view and manage Petients records</p>
           <div className="card mb-3">
-            <div className="card-body">
-              <h5 className="card-title">Appointments</h5>
-              <p className="card-text">Manage your appointments with patients.</p>
-              <ul>
-                {appointments.map((appointment, index) => (
-                  <li key={index}>
-                    <strong>Patient ID:</strong> {appointment.patientId}<br />
-                    <strong>Date:</strong> {new Date(appointment.date).toLocaleString()}<br />
-                    <strong>Status:</strong> {appointment.status}
-                  </li>
-                ))}
-              </ul>
-            </div>
+             {/* ... */}
+            <ul>
+              {appointments.map((appointment) => ( // No index needed here
+                <li key={appointment._id.toString()}> {/* Use appointment.id as the key */}
+                  <strong>Patient ID:</strong> {appointment.patientId.toString()}<br />
+                  <strong>Date:</strong> {new Date(appointment.date).toLocaleString()}<br />
+                  <strong>Status:</strong> {appointment.status}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

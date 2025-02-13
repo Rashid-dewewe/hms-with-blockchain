@@ -11,6 +11,10 @@ router.post('/records', createRecord);
 // GET /api/records/:patientId
 router.get('/records/:patientId', getRecords);
 
+// GET /api/records/:doctorId
+router.get('/records/:doctorId', getRecords);
+
+
 // Define the route to handle GET requests for records
 router.get('/records', getRecords);
 

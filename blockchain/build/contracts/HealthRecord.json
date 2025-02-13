@@ -9297,12 +9297,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x913cEf1DFA0dcD19EDEac353A8fFBDCd9ff857F2",
-      "transactionHash": "0x772dff2d554277afbc70884b7ca917aa4a549c059aaacb7d482e216267f6fba6"
+      "address": "0xE317c2AD2a1568aCf19446DDa43E18B0dE47A454",
+      "transactionHash": "0xe91ada3c84c874c643c434bc3e6451d510e89ba2353d4828df5e814ef9ae6a95"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2025-02-11T20:12:54.446Z",
+  "updatedAt": "2025-02-12T23:22:08.595Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

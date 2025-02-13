@@ -81,21 +81,28 @@ const Patient = () => {
 
   return (
     <div className="container mt-5">
-      <h2>Patient Dashboard</h2>
+      <h2 className='btn btn-warning fw-bold'>Patient Dashboard</h2>
       <div className="row">
         <div className="col-md-6">
           <div className="card mb-3">
             <div className="card-body">
-              <h5 className="card-title">My Records</h5>
+              <h5 className="card-title btn btn-primary text-white fw-bold">My Records</h5>
               <p className="card-text">View and manage your health records securely.</p>
               <ul>
-                {records.map((record, index) => (
-                  <li key={index}>
-                    <strong>Doctor ID:</strong> {record.doctorId}<br />
+                {records.map((record) => (
+                  <li key={record._id.toString()}>
+                    <strong>Doctor ID:</strong> {record.doctorId.toString()}<br />
                     <strong>Data:</strong> {record.data}<br />
                     <strong>Timestamp:</strong> {new Date(record.timestamp).toLocaleString()}
                   </li>
                 ))}
+              </ul>
+              <ul>
+                  <li>
+                    <strong>Doctor ID:</strong> 67a4c2bd04605a9c0a3901ff<br />
+                    <strong>Data:</strong> Patient has a fever and headache.<br />
+                    <strong>Timestamp:</strong> {new Date('2023-10-01T12:34:56.789+00:00').toLocaleString()}
+                  </li>
               </ul>
             </div>
           </div>
@@ -103,12 +110,12 @@ const Patient = () => {
         <div className="col-md-6">
           <div className="card mb-3">
             <div className="card-body">
-              <h5 className="card-title">Appointments</h5>
+              <h5 className="card-title text-white btn btn-danger">Appointments</h5>
               <p className="card-text">Manage your appointments with doctors.</p>
               <ul>
-                {appointments.map((appointment, index) => (
-                  <li key={index}>
-                    <strong>Doctor ID:</strong> {appointment.doctorId}<br />
+                {appointments.map((appointment) => (
+                  <li key={appointment._id.toString()}>
+                    <strong>Doctor ID:</strong> {appointment.doctorId.toString()}<br />
                     <strong>Date:</strong> {new Date(appointment.date).toLocaleString()}<br />
                     <strong>Status:</strong> {appointment.status}
                   </li>

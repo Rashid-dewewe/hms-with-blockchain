@@ -5,7 +5,7 @@ const appointmentSchema = new Schema({
   doctorId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   patientId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   date: { type: Date, required: true },
-  status: { type: String, enum: ['pending', 'completed', 'cancelled'], default: 'scheduled' },
+  status: { type: String, enum: ['scheduled', 'completed', 'cancelled'], default: 'scheduled' },
 }, {
   timestamps: true, // Automatically adds createdAt and updatedAt fields
 });

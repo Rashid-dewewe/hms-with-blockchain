@@ -7,6 +7,7 @@ import { useAuth } from './components/AuthContext';
 import { AuthProvider } from './components/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import ethpic from './assets/ethereum.jpg';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
@@ -251,7 +252,8 @@ function Signup() {
   );
 }
 
-function Signin() {
+
+const Signin = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [formData, setFormData] = React.useState({
@@ -293,12 +295,12 @@ function Signin() {
 
       console.log('Login successful:', userData);
       
-       // Redirect based on role
-    if (userData.role === 'patient') {
-      navigate('/patient');
-    } else if (userData.role === 'doctor') {
-      navigate('/doctor');
-    }
+      // Redirect based on role
+      if (userData.role === 'patient') {
+        navigate('/patient');
+      } else if (userData.role === 'doctor') {
+        navigate('/doctor');
+      }
     } catch (error) {
       console.error('Login failed:', error.message);
       setError(error.message); // Display error message to the user
@@ -353,6 +355,7 @@ function Signin() {
     </div>
   );
 }
+
 
 function NotFound() {
   return (
